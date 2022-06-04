@@ -1,0 +1,23 @@
+<div class="container" >
+    <div class="heading">
+        <h1>user detail</h1>
+    </div>
+ 
+    <div class="image" >
+       <img src="{{user?.avatar_url}}">
+    </div>
+ 
+    <div class="box">
+        <div class="box-1">{{user?.followers}} followers</div>
+        <div class="box-2">{{user?.following}} following</div>
+    </div>
+ 
+    <div class="container-2">
+        <div class="item"><h1>NAME: {{user?.login}}</h1></div>
+        <div class="item"><h1>COMPANY: {{user?.company}}</h1></div>
+        <div class="item"><h1>ID: {{user?.id}}</h1></div>
+        <div class="item"><h1>LOCATION: {{user?.location}}</h1></div>
+        <div class="item"><h1>SCORE: {{user?.score}}</h1></div>
+    </div>
+ <button (click)="backToHome()">back to home</button>
+ </div>

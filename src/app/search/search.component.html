@@ -1,0 +1,38 @@
+<nav>
+    <div class="title" #title>github user search</div>
+</nav>
+
+<div class="box">
+<input type="text" placeholder="enter username" [(ngModel)]="searchString" name="searchString">
+<button (click)="getUser()">search</button>
+</div>
+
+
+
+<ng-container *ngIf="users.length > 0">
+  <table  class="table table-striped" width="60%">
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Login</th>
+      <th scope="col">Id</th>
+      <th scope="col">Profile Url</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let user of users; index as i">
+      <th scope="row">{{ i + 1 }}</th>
+     <!-- <td>
+      <img src="{{user?.avatar_url}}">
+     </td> -->
+      <td>
+          {{ user?.login  }}
+      </td>
+      <td>{{ user?.id | number }}</td>
+      <td> {{ user?.url }}</td>
+      <td><button type="button" class="btn btn-primary" (click)="getDetails(user?.login)">view details</button></td>
+    </tr>
+    </tbody>
+    </table>
+</ng-container>
+
